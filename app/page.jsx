@@ -34,11 +34,12 @@ export default async function Home() {
     },
   ];
   return (
-    <main className="min-h-screen  bg-[radial-gradient(circle_at_50%_35%,#1746A2_0%,#0B2B70_35%,#071A4A_75%)]">
+    <main className="relative min-h-screen bg-black ">
+      <div className="absolute inset-1 pointer-events-none animate-moving-dots bg-[radial-gradient(#ffffff30_1.5px,transparent_1.5px)] [background-size:20px_20px] "></div>
       <header className="sticky backdrop-blur-2xl top-0 z-10 ">
         <div className="max-w-7xl mx-auto px-2 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <h1 className="text-2xl text-olive-100 font-extrabold mt-5 h-15 ">PRICEDROP</h1>
+            <h1 className="text-2xl text-olive-100 font-extrabold mt-5 h-15 border-b">PRICEDROP</h1>
             {/* <Image
               src={"/logo-org-2.png"}
               alt="logo"
@@ -54,9 +55,9 @@ export default async function Home() {
       </header>
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-accent-foreground text-white px-6 py-2 rounded-full text-sm font-medium mb-6">Made by Sarang</div>
-          <h2 className="text-2xl font-bold mb-4 tracking-tight text-white">Never Miss a Price Drop Update</h2>
-          <p className="text-xl text-mist-400 max-w-2xl mx-auto mb-12" >
+          <div className="relative inline-flex items-center gap-2 bg-accent-foreground text-white px-6 py-2 rounded-full text-sm font-medium mb-6">Made by Sarang</div>
+          <h2 className="relative text-2xl font-bold mb-4 tracking-tight text-white">Never Miss a Price Drop Update</h2>
+          <p className="relative text-xl text-mist-400 max-w-2xl mx-auto mb-12" >
             Smart Price Tracking Made Simple. Add any product link, we'll
             monitor the price for you and notify you the moment it drops.
           </p>
@@ -66,7 +67,7 @@ export default async function Home() {
           {products.length === 0 && (<div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-16">
             {FEATURES.map(({icon: Icon, title, description})=>(
               <div key={title}
-              className="bg-[radial-gradient(circle_at_50%_35%,#1746A2_0%,#0B2B70_35%,#071A4A_75%)] p-6 rounded-xl border border-gray-500">
+              className="bg-accent-foreground relative hover:shadow-[0_0_30px_rgba(255,255,255,0.18)]  p-6 rounded-xl border border-gray-500 ">
                 <div className="w-12 h-12  rounded-lg flex items-center justify-center mb-4 mx-auto">
                   <Icon className="w-6 h-6 text-white"/>
                 </div>

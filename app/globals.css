@@ -128,3 +128,12 @@
     @apply font-sans;
   }
 }
+
+@keyframes move-dots {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 20px; } /* Ye exactly [background-size] ke barabar hona chahiye */
+}
+
+.animate-moving-dots {
+  animation: move-dots 3s linear infinite;
+}

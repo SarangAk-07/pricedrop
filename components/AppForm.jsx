@@ -46,12 +46,12 @@ const AppForm = ({ user }) => {
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder="Paste Product URL (Amazon, eBay, etc.)"
-            className="h-12 text-base text-white px-6 py-6 rounded-4xl bg-accent-foreground border-0 shadow-[0_4px_12px_rgba(0,0,0,0.12)] border-none"
+            className="relative h-12 text-base text-white px-6 py-6 rounded-4xl bg-accent-foreground shadow-[0_4px_12px_rgba(0,0,0,0.12)] border-none hover:shadow-[0_0_30px_rgba(255,255,255,0.18)] hover:bg-white hover:text-black transition-all duration-300"
             required
             disabled={loading}
           />
           <Button
-            className="px-6 py-6 rounded-4xl"
+            className="relative px-6 py-6 rounded-4xl hover:shadow-[0_0_30px_rgba(255,255,255,0.18)] hover:bg-white hover:text-black transition-all duration-300"
             type="submit"
             disabled={loading}
             size={"lg"}

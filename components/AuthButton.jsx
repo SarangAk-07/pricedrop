@@ -11,7 +11,7 @@ const AuthButton = ({user}) => {
     if(user) {
         return (
            <form action={signOut}>
-            <Button variant="ghost" size="lg" type="submit" className="rounded-4xl px-6 py-6 gap-2 hover:bg-red-700 hover:text-white bg-accent-foreground text-white">
+            <Button variant="ghost" size="lg" type="submit" className="rounded-4xl px-6 py-6 gap-2 hover:shadow-[0_0_30px_rgba(255,255,255,0.18)] hover:text-black transition-all duration-300 bg-accent-foreground text-white">
                 <LogOut className="h-4 w-4" />
               Sign Out
             </Button>
@@ -25,7 +25,7 @@ const AuthButton = ({user}) => {
             onClick={()=>setShowAuthModal(true)}
             variant="default"   
             size="lg"
-            className="bg-accent-foreground px-6 py-6 rounded-4xl hover:bg-green-950 gap-2"
+            className="bg-accent-foreground px-6 py-6 rounded-4xl hover:shadow-[0_0_30px_rgba(255,255,255,0.18)] hover:bg-white hover:text-black transition-all duration-300 gap-2"
           >
             <LogIn />
             Sign In
