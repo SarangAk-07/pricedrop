@@ -14,13 +14,13 @@ export async function POST(request) {
     const authHeader = request.headers.get("authorization");
     const cronSecret = process.env.CRON_SECRET;
 
-    if (!cronSecret || authHeader !== `Bearer${cronSecret}`) {
+    if (!cronSecret || authHeader !== `Bearer ${cronSecret}`) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
     const supabase = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL,
       process.env.SUPABASE_SERVICE_ROLE_KEY,
-    );
+    );  
 
     const { data: products, error: productsError } = await supabase
       .from("products")
@@ -39,7 +39,7 @@ export async function POST(request) {
 
     for (const product of products) {
       try {
-        const productData = await scrapeProduct(products.url);
+        const productData = await scrapeProduct(product.url);
 
         if (!productData.currentPrice) {
           results.failed++;
@@ -106,3 +106,5 @@ export async function POST(request) {
     return NextResponse.json({error: error.message}, { status: 500});
   }
 }
+
+// curl -X POST https://pricedropak.vercel.app/api/cron/check-prices \-H "Authorization: Bearer 81e3c2f89b93fc8526ac7c9bc9eba9016c2eb3c356c172d238aa58986bbcd6f7"
